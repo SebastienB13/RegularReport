@@ -1,0 +1,6 @@
+<Button Content="Nouvelle entrée" Height="40" Margin="0,5"
+        Click="AddEvent_Click"/>
+<Button Content="Afficher le journal" Height="40" Margin="0,5"
+        Click="OpenJournal_Click"/>
+<Button Content="Générer un rapport" Height="40" Margin="0,5"
+        Click="GenerateReport_Click"/>

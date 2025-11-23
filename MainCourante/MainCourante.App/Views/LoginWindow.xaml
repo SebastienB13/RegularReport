@@ -1,0 +1,21 @@
+<Window x:Class="MainCourante.App.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Connexion" Height="250" Width="400">
+
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="Connexion au PC SURETE"
+                       FontSize="20" Margin="0 0 0 20"/>
+
+            <TextBox x:Name="UsernameField" 
+                     PlaceholderText="Nom d'utilisateur"/>
+
+            <PasswordBox x:Name="PasswordField"
+                         Margin="0 10"/>
+
+            <Button Content="Se connecter"
+                    Height="40"
+                    Click="Login_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

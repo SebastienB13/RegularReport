@@ -1,0 +1,38 @@
+<Window x:Class="MainCourante.App.Views.EventListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Journal de la main courante" Height="600" Width="900">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+            <TextBlock Text="Filtre : " VerticalAlignment="Center"/>
+
+            <Label Content="Date :" Margin="10 0"/>
+            <DatePicker x:Name="DateFilter" SelectedDateChanged="FilterChanged"/>
+
+            <Label Content="Catégorie :" Margin="20 0"/>
+            <ComboBox x:Name="CategoryFilter" Width="150" SelectionChanged="FilterChanged">
+                <ComboBoxItem Content="Toutes"/>
+                <ComboBoxItem Content="Incident"/>
+                <ComboBoxItem Content="Ronde"/>
+                <ComboBoxItem Content="Appel"/>
+                <ComboBoxItem Content="Maintenance"/>
+                <ComboBoxItem Content="Information"/>
+            </ComboBox>
+        </StackPanel>
+
+        <DataGrid x:Name="EventsGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Heure" Binding="{Binding Timestamp}" Width="120"/>
+                <DataGridTextColumn Header="Catégorie" Binding="{Binding Category}" Width="120"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*"/>
+                <DataGridTextColumn Header="Agent" Binding="{Binding AgentName}" Width="120"/>
+                <DataGridTextColumn Header="Pièce jointe" Binding="{Binding AttachmentPath}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

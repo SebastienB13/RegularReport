@@ -1,0 +1,49 @@
+<Window x:Class="MainCourante.App.Views.AddEventWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Nouvel Événement" Height="450" Width="600">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0 0 0 10">
+            <TextBlock Text="Nouvelle entrée de main courante"
+                       FontSize="22" 
+                       FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" >
+
+            <TextBlock Text="Catégorie"/>
+            <ComboBox x:Name="CategoryField" Margin="0 5 0 15">
+                <ComboBoxItem Content="Incident"/>
+                <ComboBoxItem Content="Ronde"/>
+                <ComboBoxItem Content="Appel"/>
+                <ComboBoxItem Content="Maintenance"/>
+                <ComboBoxItem Content="Information"/>
+            </ComboBox>
+
+            <TextBlock Text="Description"/>
+            <TextBox x:Name="DescriptionField" 
+                     TextWrapping="Wrap" 
+                     AcceptsReturn="True" 
+                     Height="120"
+                     Margin="0 5 0 15"/>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Content="Ajouter une pièce jointe" Click="AddAttachment_Click"/>
+                <TextBlock x:Name="AttachmentPath" Margin="10 0" VerticalAlignment="Center"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 0 0">
+            <Button Content="Annuler" Width="100" Margin="0 0 10 0" Click="Cancel_Click"/>
+            <Button Content="Valider" Width="120" Click="Validate_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
